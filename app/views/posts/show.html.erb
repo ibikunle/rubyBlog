@@ -1,0 +1,92 @@
+<style>
+<!--
+
+body
+{
+	font-family: Verdana, Helvetica, Arial; font-size: 12px; margin: 45px; 
+	text-align: left;	border-collapse: collapse;color: #000;
+}
+.by {
+	font-size: 11px; font-weight: bold;
+	}
+.date {
+	font-size:9px;
+}
+#main {
+	width: 450px;
+}
+.blog {
+	background-color: #ebebeb; border: #AAA dashed 1px;	padding: 10px;}
+}
+.blog2 {
+	background-color: #ebebeb; border: #AAA solid 1px;	padding: 10px;
+}
+.text {
+	font-size: 11px; 
+}
+#hr {width: 100%; margin: 0 auto; border: none; border-top: 1px dashed #CCC; }
+	
+h1 {text-decoration: underline;}
+th
+{
+	font-size: 13px; font-weight: normal; padding: 8px; background: #b9c9fe; 
+	border-top: 4px solid #aabcfe;	border-bottom: 1px solid #fff; color: #039;
+}
+td
+{
+	padding: 8px; background: #e8edff; border-bottom: 1px solid #fff;
+	color: #669; border-top: 1px solid transparent;
+}
+text_field {
+	height: 60px;
+} 
+-->
+</style>
+
+<div id="main"><p>
+  <h2>
+  <%=h @post.title %>
+</h2>
+</p>
+
+  <div class="blog">
+  <%=h @post.body %>	
+	<span class="date">
+	  <%=h @post.create_date %>
+	</span>
+</div>
+
+
+<br />
+
+
+
+[ <%= link_to 'Edit', edit_post_path(@post) %> |
+<%= link_to 'Back', posts_path %> ]
+
+<br />
+<br />
+
+<h2>All Comments</h2>
+<div class="blog">
+  <% for comment in @post.comments %>
+<span class="by"> <%= comment.by %></span> |
+<span class="date"><strong>Created: </strong><%= comment.created_at %></span>
+	<br />
+<span class="text"><%= comment.body %>
+	<br /><br />
+	
+      <hr id="hr"/>
+<br />
+<% end %>
+</span>
+</div>
+
+<p> </p>
+<%= form_tag :action => "comment", :id => @post %>
+   <p class="by">Your Comment:</p><%= text_area "comment", "body" %><br /><br />
+   <p class="by">Your Name:</p>
+	<%= text_field "comment", "by" %><br /><br />
+   <%= submit_tag "Comment" %>
+</form>
+</div>

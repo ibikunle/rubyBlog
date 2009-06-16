@@ -1,0 +1,31 @@
+
+<html>
+<head>
+<title>Search results
+</title>
+</head>
+<body>
+<div id"main">
+	<h2>Search results</h2>
+
+<div class="blog">
+<% @posts.each do |post| %>
+<a href="
+<%=post.id%>
+">
+<%=post.title%>
+</a>
+<br />
+<%= post.body %>
+<div class="date"><%= post.create_date %></div>
+<br />
+<hr id="hr">
+<br />
+
+
+<% end %>
+</div>
+<p> <a href="/posts"> Back</a> 
+	</div></body>
+</html>
+

@@ -1,0 +1,66 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+       "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+  <title>My Weblog Post Page: <%= controller.action_name %></title>
+  <%= stylesheet_link_tag 'scaffold' %>
+<style>
+<!--
+
+body
+{
+	font-family: Verdana, Helvetica, Arial; font-size: 12px; margin: 45px; 
+	text-align: left;	border-collapse: collapse;color: #000;
+}
+a {
+	text-decoration: none;
+}
+.by {
+	font-size: 11px; font-weight: bold;
+	}
+.date {
+	font-size:9px;
+}
+.ctrl {
+	font-size:10px; color: blue; 
+}
+#main {
+	width: 450px;
+}
+.blog {
+	background-color: #ebebeb; border: #AAA dashed 1px;	padding: 10px;}
+}
+.blog2 {
+	background-color: #ebebeb; border: #AAA solid 1px;	padding: 10px;
+}
+.create {
+	font-size: 11px; font-weight: bold; color: #000000;
+}
+.text {
+	font-size: 11px; 
+}
+#hr {width: 100%; margin: 0 auto; border: none; border-top: 1px dashed #CCC; }
+
+th
+{
+	font-size: 13px; font-weight: normal; padding: 8px; background: #b9c9fe; 
+	border-top: 4px solid #aabcfe;	border-bottom: 1px solid #fff; color: #039;
+}
+td
+{
+	padding: 8px; background: #e8edff; border-bottom: 1px solid #fff;
+	color: #669; border-top: 1px solid transparent;
+}
+-->
+</style>
+</head>
+<body>
+
+<p style="color: green"><%= flash[:notice] %></p>
+
+<%= yield  %>
+
+</body>
+</html>

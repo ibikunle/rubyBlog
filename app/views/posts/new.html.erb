@@ -1,0 +1,65 @@
+<style>
+<!--
+
+body
+{
+	font-family: Verdana, Helvetica, Arial; font-size: 12px; margin: 45px; 
+	text-align: left;	border-collapse: collapse;color: #000;
+}
+.by {
+	font-size: 11px; font-weight: bold;
+	}
+.date {
+	font-size:9px;
+}
+#main {
+	width: 450px;
+}
+.blog {
+	background-color: #F3F3F3; border: #AAA dashed 1px;	padding: 10px;}
+}
+.blog2 {
+	background-color: #F3F3F3; border: #AAA solid 1px;	padding: 10px;
+}
+.text {
+	font-size: 11px; 
+}
+#hr {width: 100%; margin: 0 auto; border: none; border-top: 1px dashed #CCC; }
+	
+h1 {text-decoration: underline;}
+th
+{
+	font-size: 13px; font-weight: normal; padding: 8px; background: #b9c9fe; 
+	border-top: 4px solid #aabcfe;	border-bottom: 1px solid #fff; color: #039;
+}
+td
+{
+	padding: 8px; background: #e8edff; border-bottom: 1px solid #fff;
+	color: #669; border-top: 1px solid transparent;
+}
+-->
+</style>
+
+<h1>Post a new blog</h1>
+
+<% form_for(@post) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :title %><br />
+    <%= f.text_field :title %>
+  </p>
+  <p>
+    <%= f.label :body %><br />
+    <%= f.text_area :body %>
+  </p>
+  <p>
+    <%= f.label :create_date %><br />
+    <%= f.datetime_select :create_date %>
+  </p>
+  <p>
+    <%= f.submit "Create" %>
+  </p>
+<% end %>
+
+<%= link_to 'Back', posts_path %>

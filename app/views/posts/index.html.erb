@@ -1,0 +1,32 @@
+
+
+<div id="main"><h2>Weblog posts</h2>
+
+<div class="blog">
+<% for post in @posts %>
+    <div><h3><%=h post.title %></h3></div>
+    <div><%=h post.body %></div>
+    <div class="date"><strong>Created: </strong><%=h post.create_date %></div>
+    <div class="ctrl">[ <%= link_to 'Show', post %> | <%= link_to 'Edit', edit_post_path(post) %> |
+     <%= link_to 'Delete', post, :confirm => 'Are you sure?', :method => :delete %> ]</div>
+	<br />
+<hr id="hr"/>
+<br />
+<% end %>
+</div>
+
+
+<br />
+
+<div class="create"><%= link_to 'Create New Post', new_post_path %></div>
+<br /><br />
+<div class="blog">
+<p class="by">Enter keyword to Search:</p>
+<form action ="posts/search" method="post">
+<input name = "key" type="input" />
+<input value="Send" type="submit"/>
+</form>
+<br />
+</div>
+
+</div>
